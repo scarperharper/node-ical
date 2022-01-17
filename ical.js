@@ -103,7 +103,7 @@ const addTZ = function (dt, parameters) {
 let zoneTable = null;
 function getIanaTZFromMS(msTZName) {
   if (!zoneTable) {
-	zoneTable = readFileSync(new URL('./windowsZones.json', import.meta.url));
+    zoneTable = require(new URL('./windowsZones.json', import.meta.url).pathname);
   }
 
   // Get hash entry
